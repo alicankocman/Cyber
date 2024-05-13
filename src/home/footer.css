@@ -1,0 +1,36 @@
+.footer{
+    width: 1519px;
+    height: 88px;
+    background-color: white;
+    display: flex;
+    font-size: 17px;
+}
+.logocyber{
+    width: 65.4px;
+    height: 22.87px;
+    margin-top: 30px;
+    margin-left: 160px;
+}
+.form{
+    position: relative;
+    top: 25px;
+    left: 32px;
+    width: 250px;
+
+}
+.btnftr{
+    width: 100px;
+    height: 40px;
+    background-color: transparent;
+    color: black;
+    border: none;
+    margin-left: 60px;
+    margin-top: 20px;
+}
+
+.logo_boyut{
+    width: 22px;
+    height: 22px;
+    margin-top: 30px;
+    margin-left: 56px;
+}

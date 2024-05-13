@@ -1,0 +1,11 @@
+.frame0 {
+    width: 100%;
+    height: 100vh;
+    background-color: #211C24;
+    background-image: url("../assets/Iphone Image.png");
+    background-size: 500px auto;
+    background-position: right+150px top+50px ; /* Resmin alt kısmından başlayarak yukarı doğru hareket edecek */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+  
