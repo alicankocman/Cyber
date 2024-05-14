@@ -1,0 +1,20 @@
+{
+    "frame0": [
+      { "text1": "Pro.Beyond.", "text2": "IPhone 14 Pro","text3": "Created to change everything for the better. For everyone" }
+     
+    ],
+    "frame1": [
+      {
+        "text1": "Playstation 5",
+        "text2": "Incredibly powerful CPUs, GPUs, and an SSD with integrated I/O will redefine your PlayStation experience.",
+        "text3": "Apple AirPods Max",
+        "text4": "Computational audio. Listen, it's powerful",
+        "text5": "Apple Vision Pro",
+        "text6": "An immersive way to experience entertainment",
+        "text7": "Macbook Air"
+      }
+    ],
+    "profile": {
+      "name": "typicode"
+    }
+  }

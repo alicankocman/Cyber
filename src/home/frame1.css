@@ -2,4 +2,120 @@
     width: 1519px;
     height: 600px;
     background-color: aqua;
+    display: flex;
+}
+.container1{
+    width: 760px;
+    height: 100%;
+    background-color: #353535;
+}
+.container2{
+    width: 759px;
+    height: 100%;
+    background-color: #EDEDED;
+}
+.container1-1{
+    width: 100%;
+    height: 328px;
+    background-color: white;
+    display: flex;
+}
+.container1-2{
+    width: 50%;
+    height: 272px;
+    background-color: #EDEDED;
+    display: flex;
+    flex: 1;
+}
+
+.text-container{
+position: relative;
+top: 100px;
+left: 100px;
+}
+.h1P{
+    font-size: 40px;
+position: relative;
+right: 120px;
+
+}
+.infoP{
+    font-size: 15px;
+    width: 395px;
+    position: relative;
+    right: 120px;
+    color: #909090;
+}
+
+.title-kulaklik{
+    font-size: 45px;
+    position: relative;
+    left: 10px;
+    top: 25px;
+}
+.title-kulaklik2{
+    font-size: 15px;
+    width: 150px;
+    position: relative;
+    left: 12px;
+    top: 25px;
+    color: #909090;
+}
+.text-container2{
+ display: flex;
+ flex-direction: column;
+}
+.container1-3{
+   position: relative;
+   left: 380px;
+   bottom: 230px;
+   width: 380px;
+   height: 230px;
+}
+.akilligozluk1{
+    font-size: 45px;
+    width: 200px;
+color: white;
+}
+.akilligozluk2{
+    font-size: 15px;
+    width: 200px;
+    color: #909090;
+}
+.text-container3{
+    position: relative;
+    left: 140px;
+    bottom: 200px;
+ 
+
+}
+.MacBookPro14{
+    position: relative;
+    left: 467px;
+bottom: 90px;
+}
+.macbook1{
+    font-size: 45px;
+    width: 300px;
+    color: black;
+}
+.macbook2{
+    font-size: 15px;
+    width: 380px;
+    color: #909090;
+}
+.text-container4{
+    position: relative;
+    left: 100px;
+    top: 200px;
+    width: 380px;
+}
+.shop1{
+    position: relative;
+    right: 190px;
+    background-color: #EDEDED;
+    border: 2px solid black;
+    color: black;
+    width: 184px;
+    height: 56px;
 }
