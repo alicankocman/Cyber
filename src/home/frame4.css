@@ -2,4 +2,58 @@
     width: 1519px;
     height: 640px;
     background-color: tomato;
+    display: flex;
+}
+.big-banner1, .big-banner2, .big-banner3, .big-banner4{
+    width: 380px;
+}
+.big-banner1{
+    background-color: white;
+}
+.big-banner2{
+    background-color: #F9F9F9;
+}
+.big-banner3{
+    background-color: #EAEAEA;
+}
+.big-banner4{
+    background-color: #2C2C2C;
+}
+
+.text10{
+    font-size: 33px;
+    width: 296px;
+    margin-left: 32px;
+}
+.text20{
+    font-size: 14px;
+    color: #909090;
+    width: 296px;
+    margin-left: 32px;
+}
+.card-img4{
+    width: 370px;
+    height: 376px;
+}
+.card-button00{
+    width: 184px;
+    height: 56px;
+    margin-left: 32px;
+    background: transparent;
+    border: 2px solid #000000;
+    color: black;
+}
+.text11{
+    font-size: 33px;
+    width: 296px;
+    margin-left: 32px;
+    color: white;
+}
+.card-button01{
+    width: 184px;
+    height: 56px;
+    margin-left: 32px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
 }

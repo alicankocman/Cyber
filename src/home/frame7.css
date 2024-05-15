@@ -2,4 +2,31 @@
     width: 1519px;
     height: 504px;
     background-color: black;
+    display: flex;
+    justify-content: space-evenly;
+}
+.logo-text{
+    width: 450px;
+    height: 48px;
+    color: #CFCFCF;
+    margin-top: 15px;
+}
+.logo-div4{
+    display: flex;
+  justify-content: space-around;
+  margin-top: 200px;
+  position: relative;
+  right: 45px;
+
+}
+.logo-div{
+    margin-top: 100px;
+}
+.Services{
+    font-size: 16px;
+    color: white;
+}
+.Services-text{
+    font-size: 14px;
+    color: #CFCFCF;
 }

@@ -1,20 +1,136 @@
-{
-    "frame0": [
-      { "text1": "Pro.Beyond.", "text2": "IPhone 14 Pro","text3": "Created to change everything for the better. For everyone" }
-     
-    ],
-    "frame1": [
+  {
+      "frame0": [
+        { "text1": "Pro.Beyond.", "text2": "IPhone 14 Pro","text3": "Created to change everything for the better. For everyone" }
+      
+      ],
+      "frame1": [
+        {
+          "text1": "Playstation 5",
+          "text2": "Incredibly powerful CPUs, GPUs, and an SSD with integrated I/O will redefine your PlayStation experience.",
+          "text3": "Apple AirPods Max",
+          "text4": "Computational audio. Listen, it's powerful",
+          "text5": "Apple Vision Pro",
+          "text6": "An immersive way to experience entertainment",
+          "text7": "Macbook Air"
+        }
+      ],
+      "frame3": [
+        {
+            "id": "1",
+            "img": "./src/assets/apple3.png",
+            "text1": "Apple iPhone 14 Pro Max 128GB Deep Purple (MQ9T3RX/A)",
+            "text2": "$900"
+        },
+        {
+            "id": "2",
+            "img": "./src/assets/kamera3.png",
+            "text1": "Blackmagic Pocket Cinema Camera 6k",
+            "text2": "$2535"
+    
+        },
+        {
+          "id": "3",
+          "img": "./src/assets/akillisaat3.png",
+          "text1": "Apple Watch Series 9 with GPS and 41mm Starlight Aluminium Case",
+          "text2": "$399"
+   
+      },
       {
-        "text1": "Playstation 5",
-        "text2": "Incredibly powerful CPUs, GPUs, and an SSD with integrated I/O will redefine your PlayStation experience.",
-        "text3": "Apple AirPods Max",
-        "text4": "Computational audio. Listen, it's powerful",
-        "text5": "Apple Vision Pro",
-        "text6": "An immersive way to experience entertainment",
-        "text7": "Macbook Air"
-      }
+        "id": "4",
+        "img": "./src/assets/kulaklik3.png",
+        "text1": "AirPods Max Silver",
+        "text2": "$549"
+    },
+    {
+      "id": "5",
+      "img": "./src/assets/sporsaat3.png",
+      "text1": "Samsung Galaxy Watch6 Classic with 47mm Black.",
+      "text2": "$369"
+  },
+  {
+    "id": "6",
+    "img": "./src/assets/samsung3.png",
+    "text1": "Galaxy Z Fold5 Unlocked with|256GB|Phantom Black",
+    "text2": "$1799"
+  },
+  {
+    "id": "7",
+    "img": "./src/assets/mini-kulaklık3.png",
+    "text1": "Galaxy Buds FE in Graphite",
+    "text2": "$99.99"
+  }, {
+    "id": "8",
+    "img": "./src/assets/tablet3.png",
+    "text1": "Apple iPad 9 with 10.2 64GB Wi-Fi in Silver (MK2L3) 2021",
+    "text2": "$398"
+  }
+    
     ],
-    "profile": {
-      "name": "typicode"
+    "frame4": [
+      {
+          "id": "1",
+          "img": "./src/assets/as.png",
+          "text1": "Popular Products",
+          "text2": "iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use."
+      },
+      {
+          "id": "2",
+          "img": "./src/assets/tablet4.png",
+          "text1": "Ipad Pro",
+          "text2": "iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use."
+  
+      },
+      {
+        "id": "3",
+        "img": "./src/assets/telefon4.png",
+        "text1": "Samsung Galaxy",
+        "text2": "iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use."
+ 
+    },
+    {
+      "id": "4",
+      "img": "./src/assets/mac4.png",
+      "text1": "Macbook Pro",
+      "text2": "iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use."
+      
     }
+    ],
+    "frame5": [
+      {
+          "id": "1",
+          "img": "./src/assets/apple5.png",
+          "text1": "Apple iPhone 14 Pro 512GB Gold (MQ233)",
+          "text2": "$1437"
+      },
+      {
+          "id": "2",
+          "img": "./src/assets/airpods5.png",
+          "text1": "AirPods Max Silver",
+          "text2": "$549"
+  
+      },
+      {
+        "id": "3",
+        "img": "./src/assets/akillisaat5.png",
+        "text1": "Apple Watch Series 9 with GPS and 41mm Starlight Aluminium Case",
+        "text2": "$399"
+ 
+    },
+    {
+      "id": "4",
+      "img": "./src/assets/apple5-1.png",
+      "text1": "Apple iPhone 14 Pro 1TB Deep Gold(MQ2V3)",
+      "text2": "$1499"
+      
+    }
+    ],
+    "frame6": [
+      { "img1": "./src/assets/tablet6.png",
+      "img2": "./src/assets/tablet2-6.png",
+      "img3": "./src/assets/tablet3-6.png",
+      "img4": "./src/assets/saat6.png",   
+      "img5": "./src/assets/telefon6.png"
+    }
+    
+    ]
   }

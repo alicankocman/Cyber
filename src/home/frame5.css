@@ -1,5 +1,75 @@
 .frame5{
     width: 1519px;
     height: 656px;
-    background-color: wheat;
+    background-color: FFFFFF;
 }
+.f76{
+    width: 230px;
+    height: 32px;
+    font-size: 24px;
+    position: relative;
+    top: 70px;
+    left: 187px;
+}
+.row{
+    width: 1120px;
+    height: 432px;
+    margin-left: 190px;
+    margin-top: 100px;
+    
+}
+.product-card4{
+width: 268px;
+height: 432px;
+background-color: #F6F6F6;
+border-radius: 8px;
+}
+.product-card1{
+    width: 268px;
+    height: 432px;
+    background-color: #F6F6F6;
+margin-right: 16px;
+border-radius: 8px;
+    }
+    .product-card2{
+        width: 268px;
+        height: 432px;
+        background-color: #F6F6F6;
+        margin-right: 16px;
+        border-radius: 8px;
+        }
+        .product-card3{
+            width: 268px;
+            height: 432px;
+            background-color: #F6F6F6;
+            margin-right: 16px;
+            border-radius: 8px;
+            }
+            .favori3{
+                width: 32px;
+                height: 32px;
+                margin-left: 190px;
+               position: relative;
+               top: 20px;
+            }
+
+            .text1-1{
+                font-size: 16px;
+               width: 236px;
+               height: 48px;
+               text-align: center;
+               margin-top: 10px;
+            }
+            .text2-1{
+                font-size: 24px;
+                width: 236px;
+                height: 24px;
+                text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            }
+            
+            .card-button12{
+               margin-left: 60px; 
+            }

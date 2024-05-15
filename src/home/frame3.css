@@ -1,5 +1,77 @@
 .frame3{
     width: 1519px;
     height: 1056px;
-    background-color: blueviolet;
+    background-color: #ffffff;
+}
+.tag{
+display: flex;
+margin-left: 95px;
+top: 50px;
+}
+
+.tag1{
+    margin-right: 50px;
+}
+.tag2{
+    margin-right: 50px;
+}
+.tag1, .tag2,.tag3{
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    margin-top: 50px;
+    background: transparent;
+    border: none;
+}
+.Products-Grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns with equal width */
+    gap: 16px; /* Gap between grid items */
+    width: 268px;
+    margin-left: 100px;
+    margin-top: 5px;
+}
+
+.card {
+    /* Define styles for your card here */
+    /* For example: */
+    background-color: #F6F6F6;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 300px;
+    height: 432px;
+    margin-top: 16px;
+    margin-bottom: 16px; /* Bottom margin between cards */
+    margin-right: 16px; /* Right margin between cards */
+}
+
+.card:nth-child(4n) {
+    margin-right: 0; /* Remove right margin for every 4th card to prevent overflow */
+}
+
+.favori{
+    width: 32px;
+    height: 32px;
+    margin-left: 230px;
+}
+.card-img{
+    width: 160px;
+    height: 160px;
+    margin-left: 40px;
+    margin-top: 30px;
+}
+.text1{
+    font-size: 16px;
+   width: 236px;
+   height: 48px;
+   text-align: center;
+   margin-top: 10px;
+}
+.text2{
+    font-size: 24px;
+    width: 236px;
+    height: 24px;
+    text-align: center;
+font-weight: bold;
+margin-bottom: 30px;
 }

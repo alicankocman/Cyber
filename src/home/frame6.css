@@ -1,5 +1,49 @@
 .frame6{
     width: 1519px;
     height: 448px;
-    background-color: yellow;
+    background: linear-gradient(180deg, #2E2E2E 0%, #000000 100%);
 }
+.card-img1{
+  position: relative;
+  top: 110px;
+}
+.card-img2{
+    position: relative;
+    bottom: 90px;
+    right: 650px;
+  }
+  .card-img3{
+    position: relative;
+    bottom: 130px;
+    right: 120px;
+  }
+  .bgs{
+  font-size: 72px;
+margin-left: 550px;
+position: relative;
+bottom: 250px;
+color: white;
+  }
+  .infos{
+    font-size: 16px;
+    margin-left: 615px;
+    position: relative;
+    bottom: 270px;
+    color: #787878;
+  }
+  .card-button123{
+    margin-left: 750px;
+    position: relative;
+    bottom: 310px;
+    width: 184px;
+    height: 56px;
+    border: 1px solid #FFFFFF;
+  }
+  .card-img5{
+    position: relative;
+    bottom: 291px;
+    left: 188px;
+  }
+  .card-img6{
+    margin-left: 415px;
+  }
