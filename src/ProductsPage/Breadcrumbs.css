@@ -3,11 +3,12 @@ width: 1200px;
 height: 104px;
 font-size: 16px;
 padding: 40px;
-margin-left: 120px;
+margin-left: 110px;
 }
 .breadcrumbs a {
     color: #A4A4A4;
     text-decoration: none;
+    padding-left: 15px;
   }
   
   .breadcrumbs a.active {

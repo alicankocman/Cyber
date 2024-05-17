@@ -15,6 +15,11 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
   }
   
   .pagination button:hover {
@@ -25,4 +30,3 @@
   .pagination button.active {
     background-color: black;
   }
-  

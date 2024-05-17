@@ -140,167 +140,192 @@
         "id": "1",
         "img": "./src/assets/shop/1.png",
         "text1": "Apple iPhone 14 Pro 512GB Gold (MQ233)",
-        "text2": "$1437"
+        "text2": "$1437",
+        "text3":"apple"
     },
     {
         "id": "2",
         "img": "./src/assets/shop/2.png",
         "text1": "Apple iPhone 11 128GB White (MQ233)",
-        "text2": "$510"
-
+        "text2": "$510",
+        "text3":"apple"
     },
     {
       "id": "3",
       "img": "./src/assets/shop/3.png",
       "text1": "Apple iPhone 11 128GB White (MQ233)",
-      "text2": "$550"
+      "text2": "$550",
+      "text3":"apple"
     },  {
       "id": "4",
       "img": "./src/assets/shop/4.png",
       "text1": "Apple iPhone 14 Pro 1TB Gold (MQ2V3)",
-      "text2": "$1499"
+      "text2": "$1499",
+      "text3":"apple"
   },
   {
       "id": "5",
       "img": "./src/assets/shop/5.png",
       "text1": "Apple iPhone 14 Pro 1TB Gold (MQ2V3)",
-      "text2": "$1399"
-
+      "text2": "$1399",
+      "text3":"apple"
   },
   {
     "id": "6",
     "img": "./src/assets/shop/6.png",
     "text1": "Apple iPhone 14 Pro 128GB Deep Purple (MQ0G3)",
-    "text2": "$1600"
+    "text2": "$1600",
+    "text3":"apple"
   },  {
     "id": "7",
     "img": "./src/assets/shop/7.png",
     "text1": "Apple iPhone 13 mini 128GB Pink (MLK23)",
-    "text2": "$850"
+    "text2": "$850",
+    "text3":"apple"
 },
 {
     "id": "8",
     "img": "./src/assets/shop/8.png",
     "text1": "Apple iPhone 14 Pro 256GB Space Black (MQ0T3)",
-    "text2": "$1399"
+    "text2": "$1399",
+    "text3":"apple"
 
 },
 {
   "id": "9",
   "img": "./src/assets/shop/9.png",
   "text1": "Apple iPhone 14 Pro 256GB Silver (MQ103)",
-  "text2": "$1399"
+  "text2": "$1399",
+  "text3":"apple"
 },
  {
   "id": "10",
   "img": "./src/assets/shop/1.png",
   "text1": "Apple iPhone 14 Pro 512GB Gold (MQ233)",
-  "text2": "$1437"
+  "text2": "$1437",
+  "text3":"apple"
 },
 {
   "id": "11",
   "img": "./src/assets/shop/2.png",
   "text1": "Apple iPhone 11 128GB White (MQ233)",
-  "text2": "$510"
+  "text2": "$510",
+  "text3":"apple"
 
 },
 {
 "id": "12",
 "img": "./src/assets/shop/3.png",
 "text1": "Apple iPhone 11 128GB White (MQ233)",
-"text2": "$550"
+"text2": "$550",
+"text3":"apple"
 },  {
 "id": "13",
 "img": "./src/assets/shop/4.png",
 "text1": "Apple iPhone 14 Pro 1TB Gold (MQ2V3)",
-"text2": "$1499"
+"text2": "$1499",
+"text3":"apple"
 },
 {
 "id": "14",
 "img": "./src/assets/shop/5.png",
 "text1": "Apple iPhone 14 Pro 1TB Gold (MQ2V3)",
-"text2": "$1399"
+"text2": "$1399",
+"text3":"apple"
 
 },
 {
 "id": "15",
 "img": "./src/assets/shop/6.png",
 "text1": "Apple iPhone 14 Pro 128GB Deep Purple (MQ0G3)",
-"text2": "$1600"
+"text2": "$1600",
+"text3":"apple"
 },  {
 "id": "16",
 "img": "./src/assets/shop/7.png",
 "text1": "Apple iPhone 13 mini 128GB Pink (MLK23)",
-"text2": "$850"
+"text2": "$850",
+"text3":"apple"
 },
 {
 "id": "17",
 "img": "./src/assets/shop/8.png",
 "text1": "Apple iPhone 14 Pro 256GB Space Black (MQ0T3)",
-"text2": "$1399"
+"text2": "$1399",
+"text3":"apple"
 
 },
 {
 "id": "18",
 "img": "./src/assets/shop/9.png",
 "text1": "Apple iPhone 14 Pro 256GB Silver (MQ103)",
-"text2": "$1399"
+"text2": "$1399",
+"text3":"apple"
 },
 
  {
   "id": "19",
   "img": "./src/assets/shop/1.png",
   "text1": "Apple iPhone 14 Pro 512GB Gold (MQ233)",
-  "text2": "$1437"
+  "text2": "$1437",
+  "text3":"apple"
 },
 {
   "id": "20",
   "img": "./src/assets/shop/2.png",
   "text1": "Apple iPhone 11 128GB White (MQ233)",
-  "text2": "$510"
+  "text2": "$510",
+  "text3":"apple"
 
 },
 {
 "id": "21",
 "img": "./src/assets/shop/3.png",
 "text1": "Apple iPhone 11 128GB White (MQ233)",
-"text2": "$550"
+"text2": "$550",
+"text3":"apple"
 },  {
 "id": "22",
 "img": "./src/assets/shop/4.png",
 "text1": "Apple iPhone 14 Pro 1TB Gold (MQ2V3)",
-"text2": "$1499"
+"text2": "$1499",
+"text3":"apple"
 },
 {
 "id": "23",
 "img": "./src/assets/shop/5.png",
 "text1": "Apple iPhone 14 Pro 1TB Gold (MQ2V3)",
-"text2": "$1399"
+"text2": "$1399",
+"text3":"apple"
 
 },
 {
 "id": "24",
 "img": "./src/assets/shop/6.png",
 "text1": "Apple iPhone 14 Pro 128GB Deep Purple (MQ0G3)",
-"text2": "$1600"
+"text2": "$1600",
+"text3":"samsung"
 },  {
 "id": "25",
 "img": "./src/assets/shop/7.png",
 "text1": "Apple iPhone 13 mini 128GB Pink (MLK23)",
-"text2": "$850"
+"text2": "$850",
+"text3":"apple"
 },
 {
 "id": "26",
 "img": "./src/assets/shop/8.png",
 "text1": "Apple iPhone 14 Pro 256GB Space Black (MQ0T3)",
-"text2": "$1399"
+"text2": "$1399",
+"text3":"pocco"
 
 },
 {
 "id": "27",
 "img": "./src/assets/shop/9.png",
 "text1": "Apple iPhone 14 Pro 256GB Silver (MQ103)",
-"text2": "$1399"
+"text2": "$1399",
+"text3":"nokia"
 }
   ]
   }
