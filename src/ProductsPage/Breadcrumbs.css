@@ -1,0 +1,16 @@
+.breadcrumbs {
+width: 1200px;
+height: 104px;
+font-size: 16px;
+padding: 40px;
+margin-left: 120px;
+}
+.breadcrumbs a {
+    color: #A4A4A4;
+    text-decoration: none;
+  }
+  
+  .breadcrumbs a.active {
+    color: #000000; /* Aktif bağlantı için farklı renk */
+  }
+  

@@ -1,0 +1,28 @@
+/* Sayfalama bileşeni için CSS */
+
+/* Sayfa numaraları */
+.pagination {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+  }
+  
+  .pagination button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    background-color: #909090;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .pagination button:hover {
+    background-color: black;
+  }
+  
+  /* Aktif sayfa numarası */
+  .pagination button.active {
+    background-color: black;
+  }
+  
