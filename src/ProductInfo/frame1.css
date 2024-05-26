@@ -1,0 +1,188 @@
+.frame-1{
+    width:1519px;
+    height: 896px;
+        display: flex;
+}
+.small-img-frame1{
+    display: flex;
+    flex-direction: column;
+    width: 74.88px;
+    height: 93px;
+    margin-left: 160px;
+gap: 50px;
+position: relative;
+top: 220px;
+}
+.big-img-frame1{
+    margin-left: 250px;
+    
+}
+
+.big-img{
+    width: 500.12px;
+    height: 516px;
+    object-fit: contain; /* Resmin oranlarını koruyarak boyutlandırmasını sağlar */
+    display: block; /* Tarayıcı uyumluluğunu artırır */
+    margin: 0 auto; /* Ortalar */
+    margin-top: 90px;
+}
+
+.text-frame1{
+ margin-top: 112px;
+}
+
+
+.price-frame1{
+    display: flex;
+    gap: 16px;
+    margin-top: 26px;
+}
+.price{
+    font-size:32px;
+    color: black;
+}
+.delprice{
+    font-size: 24px;
+    color: #A0A0A0;
+    margin-top: 7px;
+
+}
+
+.btn-frame1-color{
+    display: flex;
+    gap: 8px;
+}
+.btn-frame1{
+    width: 32px;
+    height: 32px;
+border-radius: 50px;
+border: none;
+position: relative;
+bottom: 2px;
+}
+.color-select{
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.memory-button{
+    width: 122px;
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid #D5D5D5;
+background-color: #FFFFFF;
+color: #D5D5D5;
+transition: color 0.3s ease; /* Geçiş efekti */
+}
+.memory-button {
+    margin-right: 16px; /* Sağ tarafa 16px boşluk ekler */
+}
+
+.memory-button:last-child {
+    margin-right: 0; /* Son butonun sağında boşluk olmasını engeller */
+}
+
+.tabs-memory {
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+/* Son butonun alt tarafında boşluk bırakmamak için */
+.tabs-memory:last-child {
+    margin-top: 0;
+}
+
+.memory-button:hover {
+    color: #6F6F6F;            /* Üzerine gelindiğinde yazı rengi */
+}
+
+.memory-button:active {
+    color: #000000;            /* Tıklandığında yazı rengi */
+}
+.tabs-quantity{
+    height: 200px;
+
+}
+
+.btn-frame1{
+    display: flex;
+   width: 100%;
+}
+.detail-button{
+    width: 168px;
+    height: 64px;
+    margin-right: 16px;
+    border-radius: 7px;
+    border: none;
+    background-color: #F4F4F4;
+    display: flex;
+}
+.detail-button:last-child {
+    margin-right: 0;
+}
+input.btn-frame1{
+    width: 32px;
+    height: 32px;
+}
+.detail-button2{
+    width: 168px;
+    height: 64px;
+    margin-right: 16px;
+    border-radius: 7px;
+    border: none;
+    margin-top: 48px;
+    background-color: #F4F4F4;
+    display: flex;
+}
+.detail-button2:last-child {
+    margin-right: 0;
+}
+.detail-button p{
+   margin: 0;
+   height: 20px;
+}
+.detail-img{
+    margin-top: 15px;
+    margin-left: 15px;
+}
+.detail-text{
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.detail-button2 p{
+    margin: 0;
+    height: 20px;
+ }
+ .detail-info{
+margin-top: 100px;
+width: 536px;
+height: 72px;
+ }
+ .btn-frame7{
+    margin-top: 16px;
+    width: 536px;
+ }
+ .add-to-cart{
+    width: 260px;
+    margin-right: 16px;
+    height: 56px;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+ }
+ .buy-now{
+    width: 260px;
+    height: 56px;
+    background-color: black;
+    color: white;
+ }
+ .btn-frame8{
+   display: flex;
+   margin-top: 32px;
+ }
+ .detail-text0 p{
+    margin: 0;
+    height: 20px;
+    margin-left: 16px;
+    margin-right: 44px;
+ }
