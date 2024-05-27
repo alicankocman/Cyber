@@ -1,5 +1,194 @@
-.frame-3{
+.frame-3 {
     width: 1519px;
     height: 1336px;
-background-color: yellow;
+    background-color: white;
+  }
+  
+  .rate {
+    width: 184px;
+    height: 192px;
+    background-color: #FAFAFA;
+    border-radius: 25px;
+    text-align: center;
+  }
+  
+  .rc-rate {
+    width: 120px;
+    height: 24px;
+  }
+  
+  .rc-rate-star {
+    font-size: 19px;
+    font-weight: bolder;
+  }
+  
+  .rate-score {
+    font-size: 56px;
+  }
+  
+  .rate-message {
+    font-size: 15px;
+    line-height: 16px;
+  }
+  
+  .title-rev {
+    width: 1120px;
+    height: 32px;
+    font-size: 24px;
+    position: relative;
+    left: 200px;
+    top: 52px;
+  }
+  
+  .rate {
+    margin-top: 94px;
+    margin-left: 200px;
+  }
+  
+  .line-container {
+    width: 656px; /* Çizgi konteynerinin genişliği */
+    height: 5px; /* Çizginin kalınlığı */
+    position: relative;
+    margin-top: 30px;
+    margin-left:660px;
+    bottom: 200px;
+  }
+  
+  .filled-line {
+    width: 75%; /* Çizginin yüzde 75'i dolu olacak */
+    height: 100%;
+    background-color: #D9D9D9; /* İlk rengimiz, yüzde 75'lik dolu kısmın rengi */
+    position: absolute;
+  }
+  
+  .empty-line {
+    width: 25%; /* Çizginin yüzde 25'i boş olacak */
+    height: 100%;
+    background-color: #FFB547; /* İkinci rengimiz, yüzde 25'lik boş kısmın rengi */
+    position: absolute;
+    right: 0; /* Sağa yasla, dolu kısmın yanına yerleştir */
+  }
+  
+  .rateandrev {
+    display: flex;
+  }
+  
+  .text{
+    position: relative;
+    right: 180px;
+    bottom: 12px;
+    font-size: 18px;
+  }
+  .Field{
+    width: 1120px;
+    height: 64px;
+    background-color: #ffffff;
+    position: relative;
+    left: 200px;
+    bottom: 100px;
+    border-radius: 7px;
+    color: #CECECE;
+    border: 1px solid #979797;
+
+  }
+  
+  .field-message{
+    position: relative;
+    top: 20px;
+    left: 20px;
+  }
+
+  .Reviews{
+    width: 1140px;
+    height: 300px;
+    margin-left: 200px;
+    margin-bottom: 100px;
+    position: relative;
+    bottom:70px;
+    padding: 300px;
+    justify-content: center;
+      overflow-y: hidden; /* Başlangıçta scroll çubuğunu gizle */
+  }
+
+  .card-container {
+    width: 1120px;
+    margin-bottom: 24px;
+    background-color: #FAFAFA;
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  right: 298px;
+  bottom: 300px;
+}
+
+.card-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 16px;
+}
+
+.card-content {
+    flex: 1;
+    display: flex;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+.card-description {
+    font-size: 15px;
+    color: #333333;
+    margin-bottom: 16px;
+}
+
+
+.view-more-btn{
+position: relative;
+left: 700px;
+bottom: 100px;
+width: 208px;
+  height: 48px;
+  background-color: #FFFFFF;
+  color: black;
+  border: 1px solid #545454;
+  border-radius: 8px;
+}
+.review-cards-container{
+  height: 400px;
+}
+.button-view{
+  margin-left: 650px;
+  position: relative;
+  bottom: 100px;
+  width: 208px;
+  height: 48px;
+  background-color: #FFFFFF;
+  color: black;
+  border: 1px solid #545454;
+  border-radius: 8px;
+}
+
+.card-one{
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-comment{
+margin-left: 20px;
+}
+
+.rc-rate-disabled{
+  position: relative;
+  bottom: 10px;
+}
+
+.two-img{
+  display: flex;
 }
