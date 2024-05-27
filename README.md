@@ -1,4 +1,4 @@
 
-https://github.com/alicankocman/Cyber/assets/88544926/8f9818f2-bdd8-4712-8c33-417b187fdf99
-Uploading end-record.mp4…
+
+https://github.com/alicankocman/Cyber/assets/88544926/f7969002-b099-4eb0-90f7-743d7ce4f88b
 
