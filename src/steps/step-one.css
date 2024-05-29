@@ -1,0 +1,176 @@
+.steps{
+    width: 1519px;
+    height: 184px;
+    background-color: aqua;
+    display: flex;
+    justify-content: space-around;
+}
+.content-step-one{
+    width: 1519px;
+    height: 688px;
+    background-color: red;
+}
+.step-one{
+    display: flex;
+    margin-top: 60px;
+}
+.img1{
+    width: 24px;
+    height: 24px;
+    position: relative;
+    right: 5px;
+    top: 10px;
+}
+.text-step1{
+    position: relative;
+    bottom: 20px;
+    font-size: 19px;
+    font-weight: 700;
+}
+.text-step0{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.step-two{
+    display: flex;
+    margin-top: 60px;
+}
+.img2{
+    width: 24px;
+    height: 24px;
+    position: relative;
+    right: 5px;
+    top: 10px;
+}
+.text-step2{
+    font-size: 14px;
+    font-weight: bold;
+    color: #B2B2B2;
+}
+.text-step3{
+    font-size: 14px;
+ font-weight: 700;
+    color: #B2B2B2;
+    position: relative;
+    bottom: 15px;
+}
+.step-three{
+    display: flex;
+    margin-top: 60px;
+}
+.img3{
+    width: 24px;
+    height: 24px;
+    position: relative;
+    right: 5px;
+    top: 10px;
+}
+
+.address-details{
+    width: 1120px;
+    height: 144px;
+    background-color: #F6F6F6;
+    display: flex;
+    margin-bottom: 24px;
+    margin-left: 180px;
+    border-radius: 7px;
+    border: none;
+}
+.title-content{
+    font-size: 20px;
+    color: #17183B;
+    padding-top: 48px;
+    padding-bottom: 16px;
+    margin-left: 180px;
+}
+.address-buttons{
+
+    width: 24px;
+    height: 24px;
+}
+.img4{
+    width: 24px;
+    height: 24px;
+
+}
+.bedit{
+    background-color: #F6F6F6;
+    border: none;
+    cursor: pointer;
+    margin-left: 750px;
+    margin-top: 40px;
+}
+.img5{
+    width: 1120px;
+    height: 48px;
+    position: relative;
+    right: 20px;
+}
+.add-new-address{
+    width: 1120px;
+    height: 48px;
+    background-color: transparent;
+    display: flex;
+    margin-bottom: 24px;
+    margin-left: 180px;
+    border-radius: 7px;
+    border: none;
+}
+.address-form{
+    margin-left: 100px;
+}
+.bdelete{
+    background-color: #F6F6F6;
+    border: none;
+    cursor: pointer;
+    margin-left: 800px;
+    position: relative;
+    bottom: 45px;
+   
+}
+.caption-edit{
+    width: 51px;
+    height: 22px;
+    margin-left: 20px;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 5px;
+}
+
+.leftt{
+    position: relative;
+    left: 50px;
+    bottom: 10px;
+}
+
+.chck1{
+    position: relative;
+    left: 10px;
+    top: 20px;
+    width: 24px;
+    height: 24px;
+}
+.buttons-step-one{
+    display: flex;
+    margin-left: 850px;
+    margin-top: 120px;
+}
+.next{
+    width: 205px;
+    height: 64px;
+    background-color: black;
+    color: white;
+}
+.back{
+    width: 205px;
+    height: 64px;
+    background-color: #F6F6F6;
+    color: black;
+    margin-left: 20px;
+    margin-right: 24px;
+}

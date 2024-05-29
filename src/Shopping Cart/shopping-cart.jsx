@@ -1,89 +1,89 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import Header from "../home/footer.jsx";
 import Footer from "../home/frame7.jsx";
 import "./shopping-cart.css";
 
 function ShoppingCart() {
-    const [cartItems, setCartItems] = useState([]); // Cart items'ların saklanacağı state
-    const [discountCode, setDiscountCode] = useState(""); // Discount code'un saklanacağı state
-    const [cardNumber, setCardNumber] = useState(""); // Card number'ın saklanacağı state
-    const [estimatedTax, setEstimatedTax] = useState(50); // Estimated tax'in saklanacağı state
-    const [estimatedShipping, setEstimatedShipping] = useState(29); // Estimated shipping'in saklanacağı state
-    const containerHeight = 596; // Container'ın yüksekliği
-    const itemHeight = 100; // Her bir ürünün yüksekliği
-    const maxVisibleItems = Math.floor(containerHeight / itemHeight); // Maximum gösterilecek ürün sayısı
+    const navigate = useNavigate(); // useNavigate kancasını burada tanımlayın
+    const [cartItems, setCartItems] = useState([]);
+    const [discountCode, setDiscountCode] = useState("");
+    const [cardNumber, setCardNumber] = useState("");
+    const [estimatedTax, setEstimatedTax] = useState(50);
+    const [estimatedShipping, setEstimatedShipping] = useState(29);
+    const containerHeight = 596;
+    const itemHeight = 100;
+    const maxVisibleItems = Math.floor(containerHeight / itemHeight);
 
     useEffect(() => {
-        const cartData = Cookies.get('cartItems'); // cartItems cookie'sinden veriyi al
+        const cartData = Cookies.get('cartItems');
         if (cartData) {
-            // JSON.parse ile string'i objeye dönüştür ve cartItems state'ine ata
             setCartItems(JSON.parse(cartData));
         }
-    }, []); // ComponentDidMount benzeri, yalnızca bir kere çalışacak
+    }, []);
 
-    // Her ürünün kaç kez seçildiğini hesaplayan fonksiyon
     const countOccurrences = (array, value) => {
         return array.filter((item) => item.id === value.id).length;
     };
 
-    // Ürünü sepetten kaldıran fonksiyon
     const removeFromCart = (productId) => {
         const updatedCart = cartItems.filter((item) => item.id !== productId);
         setCartItems(updatedCart);
-        Cookies.set('cartItems', JSON.stringify(updatedCart), { expires: 7 }); // Güncellenmiş veriyi Cookies'e kaydet
+        Cookies.set('cartItems', JSON.stringify(updatedCart), { expires: 7 });
     };
 
-    // Ürün adedini artıran fonksiyon
     const increaseQuantity = (productId) => {
         const updatedCart = cartItems.map((item) => {
             if (item.id === productId) {
-                return { ...item, quantity: (item.quantity || 0) + 1 }; // Eğer quantity yoksa 0 olarak kabul et
+                return { ...item, quantity: (item.quantity || 0) + 1 };
             }
             return item;
         });
         setCartItems(updatedCart);
-        Cookies.set('cartItems', JSON.stringify(updatedCart), { expires: 7 }); // Güncellenmiş veriyi Cookies'e kaydet
+        Cookies.set('cartItems', JSON.stringify(updatedCart), { expires: 7 });
     };
 
-    // Ürün adedini azaltan fonksiyon
     const decreaseQuantity = (productId) => {
         const updatedCart = cartItems.map((item) => {
-            if (item.id === productId && (item.quantity || 0) > 0) { // quantity 0'dan büyükse azaltma işlemi yap
+            if (item.id === productId && (item.quantity || 0) > 0) {
                 return { ...item, quantity: item.quantity - 1 };
             }
             return item;
         });
         setCartItems(updatedCart);
-        Cookies.set('cartItems', JSON.stringify(updatedCart), { expires: 7 }); // Güncellenmiş veriyi Cookies'e kaydet
+        Cookies.set('cartItems', JSON.stringify(updatedCart), { expires: 7 });
     };
 
-    // Ürün ekleyen fonksiyon
     const addToCart = (product) => {
-        const updatedCart = [...cartItems, { ...product, quantity: 1 }]; // Varsayılan olarak bir adet ekleniyor
+        const updatedCart = [...cartItems, { ...product, quantity: 1 }];
         setCartItems(updatedCart);
-        Cookies.set('cartItems', JSON.stringify(updatedCart), { expires: 7 }); // Güncellenmiş veriyi Cookies'e kaydet
+        Cookies.set('cartItems', JSON.stringify(updatedCart), { expires: 7 });
     };
 
     const calculateSubtotal = () => {
         return cartItems.reduce((total, item) => {
-            const price = parseFloat(item.text2.replace('$', '')) || 0; // Fiyatı $ işaretinden temizle ve sayı olarak al
-            return total + (price * (item.quantity || 1)); // Miktarı ile çarp ve toplam değeri güncelle
-        }, 0).toFixed(2); // Toplamı ondalık basamak olarak gösterme
+            const price = parseFloat(item.text2.replace('$', '')) || 0;
+            return total + (price * (item.quantity || 1));
+        }, 0).toFixed(2);
     };
 
     const handleApplyDiscount = () => {
         if (discountCode === "helloworld") {
-            setEstimatedTax(0); // Discount code "helloworld" ise estimated tax 0 olarak ayarla
+            setEstimatedTax(0);
         }
         if (cardNumber === "123456789") {
-            setEstimatedShipping(0); // Card number "123456789" ise estimated shipping 0 olarak ayarla
+            setEstimatedShipping(0);
         }
     };
 
     const calculateTotal = () => {
         const subtotal = parseFloat(calculateSubtotal());
         return (subtotal + estimatedTax + estimatedShipping).toFixed(2);
+    };
+
+    const handleCheckout = () => {
+        navigate("/step-one"); // Burada yönlendirme yapın
     };
 
     return (
@@ -104,7 +104,6 @@ function ShoppingCart() {
                                             <p className="product-name">{product.text1}</p>
                                             <div className="w-azalt" style={{display:"flex"}}>
                                                 <p>Ürün ID: {product.id}</p>
-                                                {/* Diğer ürün detaylarını ekleyin */}
                                                 <button type="button" className="increase" onClick={() => increaseQuantity(product.id)}>+</button>
                                                 <p className="item">{product.quantity || 1}</p>
                                                 <button type="button" className="decrease" onClick={() => decreaseQuantity(product.id)}>-</button>
@@ -153,7 +152,7 @@ function ShoppingCart() {
                                 <p className="order4">Total</p>
                                 <p style={{fontWeight:"bold"}}>${calculateTotal()}</p>
                             </div>
-                            <input type="button" className="order5" value="Checkout"/>
+                             <input type="button" className="order5" value="Checkout" onClick={handleCheckout} />
                         </div>
                     </div>
                 </div>
