@@ -1,0 +1,110 @@
+.brandcrumb-step-two{
+    width: 1519px;
+    height: 184px;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+}
+.step-two-content{
+    width: 1519px;
+    height: 688px;
+    background-color: white;
+}
+.step-two-p-one{
+    margin-left: 160px;
+    padding-top: 48px;
+    width: 1120px;
+    height: 24px;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 500;
+}
+.step-two-content-one{
+    width: 1120px;
+    height: 72px;
+    border-radius: 11px;
+    background-color: #FFFFFF;
+    margin-left: 160px;
+    margin-top: 60px;
+    display: flex;
+    border: 2px solid #D1D1D8;
+}
+.step-two-content-two{
+    width: 1120px;
+    height: 72px;
+    border-radius: 11px;
+    background-color: #FFFFFF;
+    margin-left: 160px;
+    margin-top: 16px;
+    display: flex;
+    border: 2px solid #D1D1D8;
+}
+
+.step-two-content-three{
+    width: 1120px;
+    height: 72px;
+    border-radius: 11px;
+    background-color: #FFFFFF;
+    margin-left: 160px;
+    margin-top: 16px;
+    display: flex;
+    border: 2px solid #D1D1D8;
+}
+
+.shipping{
+    margin-left: 24px;
+}
+.stp1{
+    margin-top: 24px;
+    margin-left: 16px;
+    font-weight: 500;
+}
+.stp2{
+    margin-top: 24px;
+    margin-left: 16px;
+    font-weight: 500;
+    width: 910px;
+}
+.stp3{
+    margin-top: 24px;
+    font-weight: 500;
+}
+.stp4{
+    margin-top: 24px;
+    margin-left: 16px;
+    font-weight: 500;
+    width: 849px;
+}
+
+.step-two-content-one,
+.step-two-content-two,
+.step-two-content-three {
+    /* Varsayılan stil */
+    color: #A2A3B1;
+}
+
+.step-two-content-one.selected,
+.step-two-content-two.selected,
+.step-two-content-three.selected {
+    /* Seçili stil */
+    color: #17183B; /* Örneğin seçili olanları kırmızı yapabilirsiniz */
+}
+
+.step-two-content-button{
+   margin-top: 242px;
+   margin-left: 845px;
+    
+}
+.step-two-button1{
+    width: 207px;
+    height: 64px;
+    background-color: white;
+    color: black;
+}
+.step-two-button2{
+    width: 207px;
+    height: 64px;
+    margin-left: 23px;
+    background-color: black;
+    color: white;
+}

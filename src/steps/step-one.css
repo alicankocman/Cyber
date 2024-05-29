@@ -1,14 +1,14 @@
 .steps{
     width: 1519px;
     height: 184px;
-    background-color: aqua;
+    background-color: white;
     display: flex;
     justify-content: space-around;
 }
 .content-step-one{
     width: 1519px;
     height: 688px;
-    background-color: red;
+    background-color: white;
 }
 .step-one{
     display: flex;

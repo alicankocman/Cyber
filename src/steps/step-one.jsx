@@ -35,7 +35,8 @@ function StepOne() {
     updateCookie();
   }, [addresses, currentStep]);
 
-  const handleEditClick = () => {
+  const handleEditClick = (index) => {
+    setCurrentStep(index + 1);
     setIsEditing(true);
   };
 
@@ -94,6 +95,10 @@ function StepOne() {
   
   const handleBackButtonClick = () => {
     navigate('/shopping-cart'); // Navigate to the shopping cart page using useNavigate
+  };
+
+  const handleNextButtonClick = () => {
+    navigate('/step-two'); // Navigate to the step-two page
   };
 
   return (
@@ -185,7 +190,7 @@ function StepOne() {
                     </div>
                   </div>
                   <div className="address-buttons">
-                    <button className='bedit' type="button" onClick={handleEditClick}>
+                    <button className='bedit' type="button" onClick={() => handleEditClick(index)}>
                       <img className='img4' src={Toedit} alt='edit' />
                     </button>
                     <button className='bdelete' type="button" onClick={() => handleDeleteAddress(index)}>
@@ -202,7 +207,7 @@ function StepOne() {
         </button>
         <div className='buttons-step-one'>
           <button className='back' onClick={handleBackButtonClick}>Back</button>
-          <button className='next'>Next</button>
+          <button className='next' onClick={handleNextButtonClick}>Next</button>
         </div>
       </div>
       <Footer />
@@ -211,4 +216,3 @@ function StepOne() {
 }
 
 export default StepOne;
-
