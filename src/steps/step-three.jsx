@@ -6,6 +6,7 @@ import Footer from "../home/frame7";
 import Location from "../assets/step-img/Location.svg";
 import ShippingSvg from "../assets/Shipping.svg";
 import Payment3 from "../assets/step-img/Payment3.svg";
+import Card from 'react-credit-card-flipping';
 
 function StepThree() {
     const [cartItems, setCartItems] = useState([]);
@@ -15,6 +16,11 @@ function StepThree() {
     const [estimatedTax, setEstimatedTax] = useState(0);
     const [estimatedShipping, setEstimatedShipping] = useState(0);
     const [total, setTotal] = useState(0);
+    const [cardNumber, setCardNumber] = useState('');
+    const [cardName, setCardName] = useState('');
+    const [cardExpiry, setCardExpiry] = useState('');
+    const [cardCVV, setCardCVV] = useState('');
+    const [focusCVV, setFocusCVV] = useState(false);
 
     useEffect(() => {
         const cartData = Cookies.get('cartItems');
@@ -34,25 +40,21 @@ function StepThree() {
 
         const subtotalValue = Cookies.get('subtotal');
         if (subtotalValue) {
-            console.log("Subtotal value from cookie:", subtotalValue); // Debugging line
             setSubtotal(parseFloat(subtotalValue.replace('$', '')) || 0);
         }
 
         const estimatedTaxValue = Cookies.get('estimatedTax');
         if (estimatedTaxValue) {
-            console.log("Estimated Tax value from cookie:", estimatedTaxValue); // Debugging line
             setEstimatedTax(parseFloat(estimatedTaxValue.replace('$', '')) || 0);
         }
 
         const estimatedShippingValue = Cookies.get('estimatedShipping');
         if (estimatedShippingValue) {
-            console.log("Estimated Shipping value from cookie:", estimatedShippingValue); // Debugging line
             setEstimatedShipping(parseFloat(estimatedShippingValue.replace('$', '')) || 0);
         }
 
         const totalValue = Cookies.get('total');
         if (totalValue) {
-            console.log("Total value from cookie:", totalValue); // Debugging line
             setTotal(parseFloat(totalValue.replace('$', '')) || 0);
         }
     }, []);
@@ -125,7 +127,55 @@ function StepThree() {
                     
                 </div>
                 <div className="Right-side">
-                    {/* Add any content you want on the right side here */}
+                    <p className="right-side-title">Payment</p>
+                    <div className="payment-methods">
+                        <p className="credit-card">Credit Card</p>
+                        <p>PayPal</p>
+                        <p>PayPal Credit</p>
+                        </div>
+                    <div id="form">
+                        <Card
+                            number={cardNumber}
+                            name={cardName}
+                            expiry={cardExpiry}
+                            cvv={cardCVV}
+                            flipCard={focusCVV}
+                        />
+                        <form>
+                            <input
+                                type="tel"
+                                className="card1"
+                                name="number"
+                                placeholder="Card Number"
+                                onChange={(event) => setCardNumber(event.target.value)}
+                            />
+                            <input
+                                type="text"
+                                className="card2"
+                                name="name"
+                                placeholder="Name on Card"
+                                onChange={(event) => setCardName(event.target.value)}
+                            />
+                            <input
+                                type="text"
+                                className="card3"
+                                name="expiry"
+                                placeholder="MM/YY"
+                                onChange={(event) => setCardExpiry(event.target.value)}
+                            />
+                            <input
+                                type="tel"
+                                className="card4"
+                                name="cvv"
+                                placeholder="CVV"
+                                onChange={(event) => setCardCVV(event.target.value)}
+                                onFocus={() => setFocusCVV(true)}
+                                onBlur={() => setFocusCVV(false)}
+                            />
+                        </form>
+                    </div>
+                    <input type="checkbox" className="checkbox4" />Same as billing address
+                    <div className="but-div"><input type="button" className="button00" value="Back" /><input type="button" className="button01" value="Pay" /></div>
                 </div>
             </div>
             <Footer />
