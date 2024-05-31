@@ -21,24 +21,13 @@ function ShoppingCart() {
         if (cartData) {
             const parsedCartItems = JSON.parse(cartData);
             setCartItems(parsedCartItems);
-            updateProductCookies(parsedCartItems);
         }
     }, []);
-
-    const updateProductCookies = (items) => {
-        const images = items.map(item => item.img);
-        const names = items.map(item => item.text1);
-        const prices = items.map(item => item.text2);
-
-        Cookies.set('productImages', JSON.stringify(images), { expires: 7 });
-        Cookies.set('productNames', JSON.stringify(names), { expires: 7 });
-        Cookies.set('productPrices', JSON.stringify(prices), { expires: 7 });
-    };
 
     const setAndUpdateCartItems = (items) => {
         setCartItems(items);
         Cookies.set('cartItems', JSON.stringify(items), { expires: 7 });
-        updateProductCookies(items);
+        updateCookies();
     };
 
     const removeFromCart = (productId) => {
@@ -85,7 +74,7 @@ function ShoppingCart() {
         if (cardNumber === "123456789") {
             setEstimatedShipping(0);
         }
-        writeToCookie();
+        updateCookies(); // Update the cookies whenever discounts are applied
     };
 
     const calculateTotal = () => {
@@ -97,20 +86,17 @@ function ShoppingCart() {
         navigate("/step-one");
     };
 
-    const writeToCookie = () => {
-        const shoppingCartData = {
-            subtotal: calculateSubtotal(),
-            estimatedTax: estimatedTax,
-            estimatedShipping: estimatedShipping,
-            total: calculateTotal()
-        };
-    
-        // Daha önce diğer fonksiyonlarda olduğu gibi shoppingCartData'yı bir dizeye dönüştürmeden doğrudan Cookies.set'e geçin.
-        Cookies.set('shoppingCartData', shoppingCartData, { expires: 7 });
+    const updateCookies = () => {
+        Cookies.set('subtotal', `$${calculateSubtotal()}`, { expires: 7 });
+        Cookies.set('estimatedTax', `$${estimatedTax.toFixed(2)}`, { expires: 7 });
+        Cookies.set('estimatedShipping', `$${estimatedShipping.toFixed(2)}`, { expires: 7 });
+        Cookies.set('total', `$${calculateTotal()}`, { expires: 7 });
     };
-    
-    
-    
+
+    useEffect(() => {
+        updateCookies(); // Ensure cookies are updated on component mount and whenever relevant state changes
+    }, [cartItems, estimatedTax, estimatedShipping]);
+
     return (
         <>
             <Header />
@@ -179,7 +165,7 @@ function ShoppingCart() {
                             </div>
                              <input type="button" className="order5" value="Checkout" onClick={handleCheckout} />
                         </div>
-                        </div>
+                    </div>
                 </div>
             </div>
             <Footer />

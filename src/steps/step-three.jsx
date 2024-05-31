@@ -11,6 +11,10 @@ function StepThree() {
     const [cartItems, setCartItems] = useState([]);
     const [addressInfo, setAddressInfo] = useState(null);
     const [shipmentMethod, setShipmentMethod] = useState(null);
+    const [subtotal, setSubtotal] = useState(0);
+    const [estimatedTax, setEstimatedTax] = useState(0);
+    const [estimatedShipping, setEstimatedShipping] = useState(0);
+    const [total, setTotal] = useState(0);
 
     useEffect(() => {
         const cartData = Cookies.get('cartItems');
@@ -26,6 +30,30 @@ function StepThree() {
         const shippingMethod = Cookies.get('shippingMethod');
         if (shippingMethod) {
             setShipmentMethod(shippingMethod);
+        }
+
+        const subtotalValue = Cookies.get('subtotal');
+        if (subtotalValue) {
+            console.log("Subtotal value from cookie:", subtotalValue); // Debugging line
+            setSubtotal(parseFloat(subtotalValue.replace('$', '')) || 0);
+        }
+
+        const estimatedTaxValue = Cookies.get('estimatedTax');
+        if (estimatedTaxValue) {
+            console.log("Estimated Tax value from cookie:", estimatedTaxValue); // Debugging line
+            setEstimatedTax(parseFloat(estimatedTaxValue.replace('$', '')) || 0);
+        }
+
+        const estimatedShippingValue = Cookies.get('estimatedShipping');
+        if (estimatedShippingValue) {
+            console.log("Estimated Shipping value from cookie:", estimatedShippingValue); // Debugging line
+            setEstimatedShipping(parseFloat(estimatedShippingValue.replace('$', '')) || 0);
+        }
+
+        const totalValue = Cookies.get('total');
+        if (totalValue) {
+            console.log("Total value from cookie:", totalValue); // Debugging line
+            setTotal(parseFloat(totalValue.replace('$', '')) || 0);
         }
     }, []);
 
@@ -87,12 +115,14 @@ function StepThree() {
                     ) : (
                         <p>No address selected.</p>
                     )}
+                    
                     <p className="Shipment-method">Shipment method</p>
                     <p className="Shipment-method2">{shipmentMethod}</p>
-                    <p className="Subtotal">Subtotal</p> {/* Add the subtotal here */}
-                    <p className="Estimated Tax">Estimated Tax</p>{/* Add the estimated tax here */}
-                  <p className="Estimated shipping & Handling">Estimated shipping & Handling</p>{/* Add the estimated shipping & handling here */}
-                    <p className="Total">Total</p>{/* Add the total here */}
+                    <p className="Subtotal">Subtotal: <p className="subtotal">${subtotal.toFixed(2)}</p></p>
+                    <p className="Estimated-Tax">Estimated Tax: <p className="estimated-tax"> ${estimatedTax.toFixed(2)}</p></p>
+                    <p className="Estimated-shipping-Handling">Estimated Shipping & Handling: <p className="esah"> ${estimatedShipping.toFixed(2)}</p></p>
+                   <div className="totals"> <p className="Total">Total: <p className="total">${total.toFixed(2)}</p></p> </div>
+                    
                 </div>
                 <div className="Right-side">
                     {/* Add any content you want on the right side here */}
