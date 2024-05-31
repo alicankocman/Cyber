@@ -11,7 +11,7 @@ import Payment from "../assets/step-img/Payment.svg";
 function StepTwo() {
     const [selectedOption, setSelectedOption] = useState(null);
     const [selectedDate, setSelectedDate] = useState("");
-    const navigate = useNavigate(); // Move this inside the component function
+    const navigate = useNavigate();
 
     const handleCheckboxChange = (value) => {
         setSelectedOption(value);
@@ -35,6 +35,10 @@ function StepTwo() {
 
     const handleBackClick = () => {
         navigate("/step-one");
+    };
+
+    const handleNextClick = () => {
+        navigate("/step-three");
     };
 
     return (
@@ -116,7 +120,7 @@ function StepTwo() {
                 </div>
                 <div className="step-two-content-button">
                     <button className="step-two-button1" onClick={handleBackClick}>Back</button>
-                    <button className="step-two-button2">Next</button>
+                    <button className="step-two-button2" onClick={handleNextClick}>Next</button>
                 </div>
             </div>
             <Footer />

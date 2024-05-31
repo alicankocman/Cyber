@@ -6,7 +6,7 @@ import Footer from "../home/frame7.jsx";
 import "./shopping-cart.css";
 
 function ShoppingCart() {
-    const navigate = useNavigate(); // useNavigate kancasını burada tanımlayın
+    const navigate = useNavigate();
     const [cartItems, setCartItems] = useState([]);
     const [discountCode, setDiscountCode] = useState("");
     const [cardNumber, setCardNumber] = useState("");
@@ -19,18 +19,31 @@ function ShoppingCart() {
     useEffect(() => {
         const cartData = Cookies.get('cartItems');
         if (cartData) {
-            setCartItems(JSON.parse(cartData));
+            const parsedCartItems = JSON.parse(cartData);
+            setCartItems(parsedCartItems);
+            updateProductCookies(parsedCartItems);
         }
     }, []);
 
-    const countOccurrences = (array, value) => {
-        return array.filter((item) => item.id === value.id).length;
+    const updateProductCookies = (items) => {
+        const images = items.map(item => item.img);
+        const names = items.map(item => item.text1);
+        const prices = items.map(item => item.text2);
+
+        Cookies.set('productImages', JSON.stringify(images), { expires: 7 });
+        Cookies.set('productNames', JSON.stringify(names), { expires: 7 });
+        Cookies.set('productPrices', JSON.stringify(prices), { expires: 7 });
+    };
+
+    const setAndUpdateCartItems = (items) => {
+        setCartItems(items);
+        Cookies.set('cartItems', JSON.stringify(items), { expires: 7 });
+        updateProductCookies(items);
     };
 
     const removeFromCart = (productId) => {
         const updatedCart = cartItems.filter((item) => item.id !== productId);
-        setCartItems(updatedCart);
-        Cookies.set('cartItems', JSON.stringify(updatedCart), { expires: 7 });
+        setAndUpdateCartItems(updatedCart);
     };
 
     const increaseQuantity = (productId) => {
@@ -40,8 +53,7 @@ function ShoppingCart() {
             }
             return item;
         });
-        setCartItems(updatedCart);
-        Cookies.set('cartItems', JSON.stringify(updatedCart), { expires: 7 });
+        setAndUpdateCartItems(updatedCart);
     };
 
     const decreaseQuantity = (productId) => {
@@ -51,14 +63,12 @@ function ShoppingCart() {
             }
             return item;
         });
-        setCartItems(updatedCart);
-        Cookies.set('cartItems', JSON.stringify(updatedCart), { expires: 7 });
+        setAndUpdateCartItems(updatedCart);
     };
 
     const addToCart = (product) => {
         const updatedCart = [...cartItems, { ...product, quantity: 1 }];
-        setCartItems(updatedCart);
-        Cookies.set('cartItems', JSON.stringify(updatedCart), { expires: 7 });
+        setAndUpdateCartItems(updatedCart);
     };
 
     const calculateSubtotal = () => {
@@ -75,6 +85,7 @@ function ShoppingCart() {
         if (cardNumber === "123456789") {
             setEstimatedShipping(0);
         }
+        writeToCookie();
     };
 
     const calculateTotal = () => {
@@ -83,9 +94,23 @@ function ShoppingCart() {
     };
 
     const handleCheckout = () => {
-        navigate("/step-one"); // Burada yönlendirme yapın
+        navigate("/step-one");
     };
 
+    const writeToCookie = () => {
+        const shoppingCartData = {
+            subtotal: calculateSubtotal(),
+            estimatedTax: estimatedTax,
+            estimatedShipping: estimatedShipping,
+            total: calculateTotal()
+        };
+    
+        // Daha önce diğer fonksiyonlarda olduğu gibi shoppingCartData'yı bir dizeye dönüştürmeden doğrudan Cookies.set'e geçin.
+        Cookies.set('shoppingCartData', shoppingCartData, { expires: 7 });
+    };
+    
+    
+    
     return (
         <>
             <Header />
@@ -154,7 +179,7 @@ function ShoppingCart() {
                             </div>
                              <input type="button" className="order5" value="Checkout" onClick={handleCheckout} />
                         </div>
-                    </div>
+                        </div>
                 </div>
             </div>
             <Footer />

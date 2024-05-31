@@ -5,7 +5,8 @@ import Shop from './ProductsPage/shop.jsx';
 import ProductDetail from './ProductInfo/ProductsDetail.jsx';
 import ShoppingCart from './Shopping Cart/shopping-cart.jsx';
 import StepOne from './steps/step-one.jsx';
-import StepTwo from './steps/step-two.jsx';  // Yeni bileşen eklendi
+import StepTwo from './steps/step-two.jsx'; // Yeni bileşen eklendi
+import StepThree from './steps/step-three.jsx'; // StepThree route also added for navigation completeness
 import { CartProvider } from './Shopping Cart/CartContext.jsx';
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/shopping-cart" element={<ShoppingCart />} />
           <Route path="/step-one" element={<StepOne />} />
-          <Route path="/step-two" element={<StepTwo />} />  {/* Yeni route eklendi */}
+          <Route path="/step-two" element={<StepTwo />} /> {/* Yeni route eklendi */}
+          <Route path="/step-three" element={<StepThree />} /> {/* New route for StepThree */}
         </Routes>
       </Router>
     </CartProvider>

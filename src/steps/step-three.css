@@ -1,0 +1,95 @@
+.content-step-three {
+    width: 1519px;
+    height: 800px;
+    background-color: aqua;
+    display: flex;
+}
+
+.Left-side {
+    width: 512px;
+    height: 704px;
+    margin-left: 160px;
+    background-color: yellow;
+    margin-top: 24px;
+    border-radius: 10px;
+}
+
+.Right-side {
+    width: 512px;
+    height: 704px;
+    margin-left: 96px;
+    background-color: red;
+    margin-top: 24px;
+}
+
+.left-side-title {
+    width: 464px;
+    height: 16px;
+    font-size: 20px;
+    line-height: 16px;
+    margin-top: 32px;
+    margin-left: 24px;
+}
+
+.selected-product {
+    width: 464px;
+    max-height: 300px; /* Set a maximum height to allow scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-right: 10px; /* Prevent content from being hidden behind scrollbar */
+}
+
+.cart-item21 {
+    display: flex;
+    margin: 20px 0; /* Add margin to separate items */
+    margin-left: 24px;
+    width: 412px;
+    height: 72px;
+    background-color: #F6F6F6;
+}
+
+.product-img21 {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px; /* Add space between image and details */
+    margin-top: 15px;
+}
+
+.product-details21 {
+    display: flex;
+    flex-direction: column; /* Arrange name and price vertically */
+}
+
+.product-name21 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.product-price21 {
+    font-size: 14px;
+    color: #555;
+}
+
+.address-title{
+    margin-top: 24px;
+    margin-left: 24px;
+    width: 464px;
+    height: 16px;
+    color: #545454;
+    font-size: 14px;
+    font-weight: 500;
+}
+.address-cookie{
+    display: flex;
+    margin-left: 24px;
+}
+.Shipment-method{
+    margin-left: 24px;
+    margin-top: 16px;
+    color: #545454;
+    font-size: 14px;
+    font-weight: 500;
+}
+.Shipment-method2{
+    margin-left: 24px;
+    margin-top: 16px;
+}
