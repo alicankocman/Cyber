@@ -1,0 +1,10 @@
+.step-end-container{
+    width: 1519px;
+    height: 600px;
+}
+.step-end-text{
+    position: relative;
+    width: 600px;
+    top: 25%;
+    left: 30%;
+}

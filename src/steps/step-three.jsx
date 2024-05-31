@@ -7,6 +7,7 @@ import Location from "../assets/step-img/Location.svg";
 import ShippingSvg from "../assets/Shipping.svg";
 import Payment3 from "../assets/step-img/Payment3.svg";
 import Card from 'react-credit-card-flipping';
+import { useNavigate } from "react-router-dom";
 
 function StepThree() {
     const [cartItems, setCartItems] = useState([]);
@@ -21,6 +22,7 @@ function StepThree() {
     const [cardExpiry, setCardExpiry] = useState('');
     const [cardCVV, setCardCVV] = useState('');
     const [focusCVV, setFocusCVV] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const cartData = Cookies.get('cartItems');
@@ -58,6 +60,17 @@ function StepThree() {
             setTotal(parseFloat(totalValue.replace('$', '')) || 0);
         }
     }, []);
+
+    const handleBackClick = () => {
+        navigate("/step-two");
+    };
+
+    const handlePayClick = () => {
+        // Perform any necessary payment processing logic here
+
+        // Redirect to step-end page
+        navigate("/step-end");
+    };
 
     return (
         <>
@@ -120,11 +133,10 @@ function StepThree() {
                     
                     <p className="Shipment-method">Shipment method</p>
                     <p className="Shipment-method2">{shipmentMethod}</p>
-                    <p className="Subtotal">Subtotal: <p className="subtotal">${subtotal.toFixed(2)}</p></p>
-                    <p className="Estimated-Tax">Estimated Tax: <p className="estimated-tax"> ${estimatedTax.toFixed(2)}</p></p>
-                    <p className="Estimated-shipping-Handling">Estimated Shipping & Handling: <p className="esah"> ${estimatedShipping.toFixed(2)}</p></p>
-                   <div className="totals"> <p className="Total">Total: <p className="total">${total.toFixed(2)}</p></p> </div>
-                    
+                    <p className="Subtotal">Subtotal: <span className="subtotal">${subtotal.toFixed(2)}</span></p>
+                    <p className="Estimated-Tax">Estimated Tax: <span className="estimated-tax">${estimatedTax.toFixed(2)}</span></p>
+                    <p className="Estimated-shipping-Handling">Estimated Shipping & Handling: <span className="esah">${estimatedShipping.toFixed(2)}</span></p>
+                    <div className="totals"><p className="Total">Total: <span className="total">${total.toFixed(2)}</span></p></div>
                 </div>
                 <div className="Right-side">
                     <p className="right-side-title">Payment</p>
@@ -132,7 +144,7 @@ function StepThree() {
                         <p className="credit-card">Credit Card</p>
                         <p>PayPal</p>
                         <p>PayPal Credit</p>
-                        </div>
+                    </div>
                     <div id="form">
                         <Card
                             number={cardNumber}
@@ -171,16 +183,19 @@ function StepThree() {
                                 onChange={(event) => setCardCVV(event.target.value)}
                                 onFocus={() => setFocusCVV(true)}
                                 onBlur={() => setFocusCVV(false)}
-                            />
-                        </form>
-                    </div>
-                    <input type="checkbox" className="checkbox4" />Same as billing address
-                    <div className="but-div"><input type="button" className="button00" value="Back" /><input type="button" className="button01" value="Pay" /></div>
-                </div>
-            </div>
-            <Footer />
-        </>
-    );
-}
-
-export default StepThree;
+                                />
+                                </form>
+                                </div>
+                                <input type="checkbox" className="checkbox4" />Same as billing address
+                                <div className="but-div">
+                                <input type="button" className="button00" onClick={handleBackClick} value="Back" />
+                                <input type="button" className="button01" value="Pay" onClick={handlePayClick} />
+                                </div>
+                                </div>
+                                </div>
+                                <Footer />
+                                </>
+                                );
+                                }
+                                
+                                export default StepThree;
