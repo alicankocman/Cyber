@@ -5,6 +5,11 @@
 **Proje Özeti:**
 Cyber, Apple telefonlarını listeleyen, kullanıcıların ürün araması yapabileceği, ürünleri sepete ekleyebileceği ve satın alma sürecini tamamlayabileceği bir web sitesi. Bu projede, kullanıcı deneyimini artırmak ve verileri güvenli bir şekilde saklamak için çeşitli teknolojiler ve yöntemler kullanılmıştır.
 
+## Proje Videosu
+
+
+https://github.com/alicankocman/Cyber/assets/88544926/215430a4-9330-4682-82d9-9f3e82d69fd5
+
 ## Özellikler
 
 1. **Ürün Listeleme:**
@@ -37,9 +42,6 @@ Cyber, Apple telefonlarını listeleyen, kullanıcıların ürün araması yapab
 
 Proje, kullanıcı dostu bir arayüz ve sorunsuz bir kullanıcı deneyimi sunmayı hedeflemektedir. Tüm sayfalar ve fonksiyonlar, titizlikle test edilmiş ve çalışır durumda tutulmuştur.
 
-## Proje Videosu
 
-
-https://github.com/alicankocman/Cyber/assets/88544926/215430a4-9330-4682-82d9-9f3e82d69fd5
 
 
