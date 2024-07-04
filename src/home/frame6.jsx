@@ -1,9 +1,11 @@
 import "./frame6.css"
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Frame6() {
     const [cardsData, setCardsData] = useState([]);
+    const navigate = useNavigate(); // Initialize navigate
 
     useEffect(() => {
         axios.get('http://localhost:3000/frame6')
@@ -24,7 +26,7 @@ function Frame6() {
                         <img className="card-img6" src={card.img5} alt="product" />
                         <p className="bgs">Big Summer Sale</p>
                         <p className="infos">Commodo fames vitae vitae leo mauris in. Eu consequat.</p>
-                        <button className="card-button123">Shop Now</button>
+                        <button className="card-button123" onClick={() => navigate('/shop')}>Shop Now</button>
                         <img className="card-img5" src={card.img4} alt="product" />
                     </div>
                      ))}

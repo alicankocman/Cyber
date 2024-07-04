@@ -12,7 +12,7 @@
     left: 187px;
 }
 .row{
-    width: 1120px;
+    width: 1320px;
     height: 432px;
     margin-left: 190px;
     margin-top: 100px;
@@ -25,7 +25,7 @@ background-color: #F6F6F6;
 border-radius: 8px;
 }
 .product-card1{
-    width: 268px;
+    width: 278px;
     height: 432px;
     background-color: #F6F6F6;
 margin-right: 16px;
@@ -71,5 +71,24 @@ border-radius: 8px;
             }
             
             .card-button12{
-               margin-left: 60px; 
+            position: relative;
+            left: 25px;
+            bottom: 15px;
+            width: 183px;
             }
+            .favori {
+                cursor: pointer;
+                position: relative;
+                right: 30px;
+            }
+            
+            .favori path {
+                fill: #f6f6f6; /* Varsayılan iç renk */
+                stroke: #a8a8a8; /* Çerçeve rengi */
+                stroke-width: 1;
+            }
+            
+            .favori.favorite path {
+                fill: #ff0000; /* Favori durumu için iç renk */
+            }
+            

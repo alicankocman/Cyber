@@ -7,8 +7,9 @@ import ShoppingCart from './Shopping Cart/shopping-cart.jsx';
 import StepOne from './steps/step-one.jsx';
 import StepTwo from './steps/step-two.jsx'; 
 import StepThree from './steps/step-three.jsx'; 
-import StepEnd from './steps/step-end.jsx'; // StepEnd bileşenini ekledik
+import StepEnd from './steps/step-end.jsx'; 
 import { CartProvider } from './Shopping Cart/CartContext.jsx';
+import Favorite from "./home/favorite.jsx"  // Favorite bileşenini ithal ettik
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
           <Route path="/step-one" element={<StepOne />} />
           <Route path="/step-two" element={<StepTwo />} /> 
           <Route path="/step-three" element={<StepThree />} /> 
-          <Route path="/step-end" element={<StepEnd />} /> {/* StepEnd bileşeni için yeni route */}
+          <Route path="/step-end" element={<StepEnd />} /> 
+          <Route path="/favorite" element={<Favorite />} />  {/* Favorite bileşeni için yeni route */}
         </Routes>
       </Router>
     </CartProvider>

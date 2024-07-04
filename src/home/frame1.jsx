@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import PlayStation from "../assets/PlayStation.png";
 import kulaklık from "../assets/kulaklık.png";
 import akilligozluk from "../assets/akilligozluk.png";
@@ -8,6 +9,7 @@ import "./frame1.css";
 function Frame1() {
   const [fetchData, setFetchData] = useState({ text1: "", text2: "", text3: "", text4: "",text5:"",text6:"",text7:" ",text10:" "});
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProducts = () => {
@@ -65,7 +67,7 @@ function Frame1() {
       <p className="macbook2">{fetchData.text2}</p>
       </div>
         <img src={MacBookPro14} alt="MacBookPro14" className="MacBookPro14" />
-        <button className="shop1">Shop Now</button>
+        <button className="shop1" onClick={() => navigate('/shop')}>Shop Now</button>
       </div>
     </div>
   );

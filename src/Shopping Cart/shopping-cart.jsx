@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import Header from "../home/footer.jsx";
 import Footer from "../home/frame7.jsx";
+import { CartContext } from '../Shopping Cart/CartContext';
 import "./shopping-cart.css";
 
 function ShoppingCart() {
     const navigate = useNavigate();
-    const [cartItems, setCartItems] = useState([]);
+    const { cartItems, removeFromCart, addToCart, decreaseQuantity } = useContext(CartContext); // decreaseQuantity burada eklendi
     const [discountCode, setDiscountCode] = useState("");
     const [cardNumber, setCardNumber] = useState("");
     const [estimatedTax, setEstimatedTax] = useState(50);
@@ -16,54 +17,14 @@ function ShoppingCart() {
     const itemHeight = 100;
     const maxVisibleItems = Math.floor(containerHeight / itemHeight);
 
-    useEffect(() => {
-        const cartData = Cookies.get('cartItems');
-        if (cartData) {
-            const parsedCartItems = JSON.parse(cartData);
-            setCartItems(parsedCartItems);
-        }
-    }, []);
-
-    const setAndUpdateCartItems = (items) => {
-        setCartItems(items);
-        Cookies.set('cartItems', JSON.stringify(items), { expires: 7 });
-        updateCookies();
-    };
-
-    const removeFromCart = (productId) => {
-        const updatedCart = cartItems.filter((item) => item.id !== productId);
-        setAndUpdateCartItems(updatedCart);
-    };
-
     const increaseQuantity = (productId) => {
-        const updatedCart = cartItems.map((item) => {
-            if (item.id === productId) {
-                return { ...item, quantity: (item.quantity || 0) + 1 };
-            }
-            return item;
-        });
-        setAndUpdateCartItems(updatedCart);
-    };
-
-    const decreaseQuantity = (productId) => {
-        const updatedCart = cartItems.map((item) => {
-            if (item.id === productId && (item.quantity || 0) > 0) {
-                return { ...item, quantity: item.quantity - 1 };
-            }
-            return item;
-        });
-        setAndUpdateCartItems(updatedCart);
-    };
-
-    const addToCart = (product) => {
-        const updatedCart = [...cartItems, { ...product, quantity: 1 }];
-        setAndUpdateCartItems(updatedCart);
+        addToCart({ id: productId });
     };
 
     const calculateSubtotal = () => {
         return cartItems.reduce((total, item) => {
             const price = parseFloat(item.text2.replace('$', '')) || 0;
-            return total + (price * (item.quantity || 1));
+            return total + (price * item.quantity);
         }, 0).toFixed(2);
     };
 
@@ -74,7 +35,7 @@ function ShoppingCart() {
         if (cardNumber === "123456789") {
             setEstimatedShipping(0);
         }
-        updateCookies(); // Update the cookies whenever discounts are applied
+        updateCookies();
     };
 
     const calculateTotal = () => {
@@ -94,7 +55,7 @@ function ShoppingCart() {
     };
 
     useEffect(() => {
-        updateCookies(); // Ensure cookies are updated on component mount and whenever relevant state changes
+        updateCookies();
     }, [cartItems, estimatedTax, estimatedShipping]);
 
     return (
@@ -106,7 +67,7 @@ function ShoppingCart() {
                         <p className="shopping-title1">Shopping Cart</p>
                         <div className="cart-items-container" style={{ overflowY: "auto", height: `${containerHeight}px` }}>
                             <div className="cart-items-wrapper">
-                                {cartItems.slice(0, maxVisibleItems).map((product, index) => (
+                                {cartItems.map((product, index) => (
                                     <div className="flex-shopping" key={index}>
                                         <div className="product-image">
                                             <img style={{width:"90px",height:"90px"}} src={product.img} alt={product.text1} />
@@ -163,7 +124,7 @@ function ShoppingCart() {
                                 <p className="order4">Total</p>
                                 <p style={{fontWeight:"bold"}}>${calculateTotal()}</p>
                             </div>
-                             <input type="button" className="order5" value="Checkout" onClick={handleCheckout} />
+                            <input type="button" className="order5" value="Checkout" onClick={handleCheckout} />
                         </div>
                     </div>
                 </div>

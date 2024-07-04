@@ -75,3 +75,16 @@ top: 50px;
 font-weight: bold;
 margin-bottom: 30px;
 }
+.favori {
+    cursor: pointer;
+}
+
+.favori path {
+    fill: #f6f6f6; /* Varsayılan iç renk */
+    stroke: #a8a8a8; /* Çerçeve rengi */
+    stroke-width: 1;
+}
+
+.favori.favorite path {
+    fill: #ff0000; /* Favori durumu için iç renk */
+}

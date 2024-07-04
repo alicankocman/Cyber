@@ -16,27 +16,27 @@
       ],
       "frame3": [
         {
-            "id": "1",
+            "id": "9",
             "img": "./src/assets/apple3.png",
             "text1": "Apple iPhone 14 Pro Max 128GB Deep Purple (MQ9T3RX/A)",
             "text2": "$900"
         },
         {
-            "id": "2",
+            "id": "10",
             "img": "./src/assets/kamera3.png",
             "text1": "Blackmagic Pocket Cinema Camera 6k",
             "text2": "$2535"
     
         },
         {
-          "id": "3",
+          "id": "11",
           "img": "./src/assets/akillisaat3.png",
           "text1": "Apple Watch Series 9 with GPS and 41mm Starlight Aluminium Case",
           "text2": "$399"
    
       },
       {
-        "id": "4",
+        "id": "12",
         "img": "./src/assets/kulaklik3.png",
         "text1": "AirPods Max Silver",
         "text2": "$549"

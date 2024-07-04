@@ -11,9 +11,10 @@ import resim5 from "../assets/5.png";
 import resim6 from "../assets/6.png";
 import prevArrow from "../assets/prev-arrow.png";
 import nextArrow from "../assets/next-arrow.png";
-
+import { useNavigate } from 'react-router-dom';
 
 function Frame2() {
+  const navigate = useNavigate(); // Initialize navigate
   const settings = {
     dots: false,
     infinite: true,
@@ -28,9 +29,16 @@ function Frame2() {
     <div className="slider-container">
       <h2 className="titlecategory">Browse By Category</h2>
       <Slider {...settings}>
-        <div>
-          <h3><img src={resim1} alt="resim1" className="resim1" /></h3>
-        </div>
+      <div>
+            <h3>
+              <img 
+                src={resim1} 
+                alt="resim1" 
+                className="resim1" 
+                onClick={() => navigate('/shop')}
+              />
+            </h3>
+          </div>
         <div>
           <h3><img src={resim2}></img></h3>
         </div>

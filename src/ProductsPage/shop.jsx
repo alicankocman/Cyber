@@ -12,6 +12,7 @@ function Shop() {
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(9);
   const [sortedData, setSortedData] = useState([]);
+  const [favorites, setFavorites] = useState({});
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,25 +23,72 @@ function Shop() {
         setSortedData(data);
       })
       .catch(error => console.error('Error fetching shop data:', error));
+      scrollToTop();
   }, []);
 
-  const handleDropdownChange = (sortType) => {
-    let sortedProducts = [...shopData];
-
-    sortedProducts.sort((a, b) => {
-      const priceA = a.price ? parseFloat(a.price.replace(/[^\d.-]/g, '')) : 0;
-      const priceB = b.price ? parseFloat(b.price.replace(/[^\d.-]/g, '')) : 0;
-
-      if (sortType === "expensiveToCheap") {
-        return priceB - priceA;
-      } else if (sortType === "cheapToExpensive") {
-        return priceA - priceB;
+  const scrollToTop = () => {
+    const scrollStep = -window.scrollY / (1000 / 15); // 500ms süre ile yavaşça kaydır
+    const scrollInterval = setInterval(() => {
+      if (window.scrollY !== 0) {
+        window.scrollBy(0, scrollStep);
+      } else {
+        clearInterval(scrollInterval);
       }
-      return 0;
-    });
+    }, 15);
+  };
 
-    setSortedData(sortedProducts);
-    setCurrentPage(1);
+
+  const handleDropdownChange = (sortType) => {
+    console.log("Original shopData:", shopData); // Debug için orijinal shopData'yı göster
+  
+    try {
+      // Filtreleme işlemi
+      const filteredShopData = shopData.filter(item => item.text2 !== undefined && item.text2 !== null);
+      
+      console.log("Filtered shopData:", filteredShopData); // Debug için filtrelenmiş shopData'yı göster
+  
+      // Sıralama işlemi
+      let sortedProducts = [...filteredShopData];
+  
+      sortedProducts.sort((a, b) => {
+        try {
+          console.log("Sorting prices...");
+          console.log("Price A:", a.text2);
+          console.log("Price B:", b.text2);
+  
+          // Fiyatları karşılaştırmadan önce gerekli işlemleri yapın (örneğin, sayıya dönüştürme veya temizleme)
+          const priceA = parseFloat(a.text2.replace(/[^\d.-]/g, '')); // Örnek işlemler
+          const priceB = parseFloat(b.text2.replace(/[^\d.-]/g, '')); // Örnek işlemler
+  
+          if (sortType === "expensiveToCheap") {
+            return priceB - priceA;
+          } else if (sortType === "cheapToExpensive") {
+            return priceA - priceB;
+          }
+          return 0;
+        } catch (error) {
+          console.error("Error sorting products:", error);
+          return 0; // Hata durumunda 0 döndürün veya uygulama mantığınıza göre işleyin
+        }
+      });
+  
+      console.log("Sorted Products:", sortedProducts);
+  
+      setSortedData(sortedProducts);
+      setCurrentPage(1);
+    } catch (error) {
+      console.error("Error filtering or sorting products:", error);
+      // Hata durumunda kullanıcıya hata mesajı göstermek gibi bir işlem yapın
+    }
+};
+
+  
+
+  const toggleFavorite = (id) => {
+    setFavorites(prevFavorites => ({
+      ...prevFavorites,
+      [id]: !prevFavorites[id]
+    }));
   };
 
   const renderProductCards = () => {
@@ -48,11 +96,18 @@ function Shop() {
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
     const currentProducts = sortedData.slice(indexOfFirstProduct, indexOfLastProduct);
 
-    return (
+return (
       <div className="product-card-group">
         {currentProducts.map(product => (
           <div key={product.id} className="product-card">
-            <div className="favorishop"><img src={favoriimg} alt="favori" /></div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              className={`favori ${favorites[product.id] ? 'favorite' : ''}`}
+              onClick={() => toggleFavorite(product.id)}
+            >
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 1.01 4.5 2.09C13.09 4.01 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
             <img
               className="product-img"
               src={product.img}
@@ -197,6 +252,7 @@ function Shop() {
                 </div>
               </div>
             </div>
+            
             {/* Add more accordion items here if needed */}
           </div>
         </div>
@@ -208,9 +264,10 @@ function Shop() {
                 Sort by Price
               </button>
               <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li><button className="dropdown-item" onClick={() => handleDropdownChange("expensiveToCheap")}>From Expensive to Cheap</button></li>
-                <li><button className="dropdown-item" onClick={() => handleDropdownChange("cheapToExpensive")}>From Cheap to Expensive</button></li>
-              </ul>
+  <li><button className="dropdown-item" onClick={() => handleDropdownChange("expensiveToCheap")}>From Expensive to Cheap</button></li>
+  <li><button className="dropdown-item" onClick={() => handleDropdownChange("cheapToExpensive")}>From Cheap to Expensive</button></li>
+</ul>
+
             </div>
           </div>
           {renderProductCards()}
@@ -219,8 +276,10 @@ function Shop() {
             currentPage={currentPage}
             onPageChange={handlePageChange}
           />
+          
         </div>
       </div>
+      
       <Footer />
     </div>
   );

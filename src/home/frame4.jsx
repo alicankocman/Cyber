@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import "./frame4.css"
+import { useNavigate } from 'react-router-dom';
 
 function Frame4() {
     const [cardsData, setCardsData] = useState([]);
+    const navigate = useNavigate(); // Initialize navigate
 
     useEffect(() => {
         axios.get('http://localhost:3000/frame4')
@@ -24,7 +26,7 @@ function Frame4() {
                             <img className="card-img4" src={card.img} alt="product" />
                             <h3 className="text10">{card.text1}</h3>
                             <p className="text20">{card.text2}</p>
-                            <button className="card-button00">Shop Now</button>
+                            <button className="card-button00" onClick={() => navigate('/shop')}>Shop Now</button>
                         </div>
                     )
                 ))}
@@ -36,7 +38,7 @@ function Frame4() {
                              <img className="card-img4" src={card.img} alt="product" />
                             <h3 className="text10">{card.text1}</h3>
                             <p className="text20">{card.text2}</p>
-                            <button className="card-button00">Shop Now</button>
+                            <button className="card-button00" onClick={() => navigate('/shop')}>Shop Now</button>
                         </div>
                     )
                 ))}
@@ -48,7 +50,7 @@ function Frame4() {
                              <img className="card-img4" src={card.img} alt="product" />
                             <h3 className="text10">{card.text1}</h3>
                             <p className="text20">{card.text2}</p>
-                            <button className="card-button00">Shop Now</button>
+                            <button className="card-button00" onClick={() => navigate('/shop')}>Shop Now</button>
                         </div>
                     )
                 ))}
@@ -60,7 +62,7 @@ function Frame4() {
                              <img className="card-img4" src={card.img} alt="product" />
                             <h3 className="text11">{card.text1}</h3>
                             <p className="text20">{card.text2}</p>
-                            <button className="card-button01">Shop Now</button>
+                            <button className="card-button01" onClick={() => navigate('/shop')}>Shop Now</button>
                         </div>
                     )
                 ))}
